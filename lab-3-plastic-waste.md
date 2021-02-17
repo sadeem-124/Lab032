@@ -1,11 +1,11 @@
 Lab 3 - Plastic Waste
 ================
 DSC 200 - Data Science I
-2021-02-06
+2021-02-17
 
-Student Name:
+Student Name:Sadeem ghareeb
 
-Student ID:
+Student ID:2201001438 G:DS6
 
 ``` r
 library(tidyverse)
@@ -111,11 +111,20 @@ E2. Recreate the density plots above using a different (lower) alpha
 level that works better for displaying the density curves for all
 continents.
 
+``` r
+ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     color = continent, 
+                     fill = continent)) +
+  geom_density(alpha = 0.2)
+```
+
 E3. Describe why we defined the `color` and `fill` of the curves by
 mapping aesthetics of the plot but we defined the `alpha` level as a
 characteristic of the plotting geom.
 
-Answer here:
+Answer here: We defined the edges of the shape to make the curves more
+visible
 
 *Now is a good time to knit your document and commit and push your
 changes to GitHub with an appropriate commit message. Make sure to
@@ -142,6 +151,15 @@ apparent in the box plots but not in the violin plots?
 E5. Visualize the relationship between plastic waste per capita and
 mismanaged plastic waste per capita using a scatterplot. Describe the
 relationship.
+
+``` r
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_point()
+```
+
+\`\`\`
 
 E6. Colour the points in the scatterplot by continent. Does there seem
 to be any clear distinctions between continents with respect to how
